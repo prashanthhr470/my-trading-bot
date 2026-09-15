@@ -1,0 +1,32 @@
+# Secrets - never commit
+.env
+data/ctrader_oauth_tokens.json
+data/ctrader_authorized_account.json
+
+# Virtual environments
+.venv/
+.ctrader_venv/
+
+# Python build artifacts
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Runtime-generated data (journals, live captures, paper account state, logs)
+data/openapi/*.jsonl
+data/openapi/*_depth_snapshot.json
+data/paper/
+data/journals/
+data/runtime/
+data/ai/
+data/audit/
+data/patch_backups/
+logs/*.log
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+
+# OS
+Thumbs.db
+Desktop.ini

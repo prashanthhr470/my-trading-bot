@@ -1,0 +1,64 @@
+============================================================
+HAFNOT COMMANDS
+============================================================
+
+See README.md for full setup instructions. Quick reference:
+
+START THE 24/7 PAPER SUPERVISOR:
+
+.\START_HAFNOT.ps1
+
+
+CHECK COMPLETE SYSTEM STATUS:
+
+.\CHECK_HAFNOT_STATUS.ps1
+
+
+WATCH LIVE MARKET DATA / HEALTH:
+
+.\WATCH_HAFNOT_MARKET.ps1
+.\WATCH_HAFNOT_HEALTH.ps1
+
+
+RUN A SINGLE DRY-RUN PIPELINE CYCLE (no loop):
+
+.venv\Scripts\python.exe batch7_final_integration.py
+
+
+RUN THE RESEARCH/VALIDATION DEMONSTRATION (no external deps needed):
+
+.venv\Scripts\python.exe hafnot_research_xauusd_demo.py
+
+
+DOWNLOAD REAL HISTORICAL DATA FOR BACKTESTING:
+
+.ctrader_venv\Scripts\python.exe hafnot_download_historical_data.py --symbol EURUSD --period H1 --days 730
+
+
+VERIFY DEMO ORDER EXECUTION (deliberate, one-time):
+
+.venv\Scripts\python.exe hafnot_demo_order_smoke_test.py
+
+
+RUN THE TEST SUITE:
+
+.venv\Scripts\python.exe -m pytest -q
+
+
+CURRENT PRODUCTION RUNTIME (canonical chain):
+
+hafnot_final_runtime.py
+hafnot_ctrader_worker.py
+hafnot_storage_guard.py
+app\openapi\market\multi_symbol_market_data.py
+app\paper\multi_symbol_paper.py
+batch7_final_integration.py
+
+
+IMPORTANT:
+
+alternate/superseded launchers were moved to archive_superseded\,
+not deleted, for reference. They are NOT part of the canonical
+runtime chain - see FINAL_ACCEPTANCE_REPORT.md for the full
+cleanup rationale.
+============================================================

@@ -1,0 +1,10 @@
+[tool.pytest.ini_options]
+# Real automated pytest suites live under tests/ and as app/**/test_*.py
+# files that define actual test_* functions. Many other app/**/test_*.py
+# and root-level test_*.py files are standalone diagnostic/live-connectivity
+# scripts (they open a real cTrader/Ollama connection and print results
+# when run directly with `python <file>.py`) and are intentionally NOT
+# meant to run under pytest - pytest simply finds zero test functions in
+# them and skips them, which is expected, not a failure.
+testpaths = ["tests", "app"]
+python_files = ["test_*.py"]
